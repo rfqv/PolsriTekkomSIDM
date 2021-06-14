@@ -1,0 +1,173 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding-top:60px;
+    padding-bottom: 49px;
+    background-color: #eeeeee;
+    font-size: 18px;
+    font-family: 'PT Sans', sans-serif;
+   ;
+}
+
+/* Container */
+.container-fluid {
+    display: grid;
+    gap: 10px;
+}
+
+
+/* Header */
+.header {
+    display: grid;
+    grid-template-areas:
+        'hero hero feature-1'
+}
+
+.hero {
+    grid-area: hero;
+    min-height: 517px;
+    background-image: url(../img/tekkom2.jpg);
+    background-size: default;
+    background-position: center;
+    padding: 50px;
+}
+
+.hero > * {
+    display: none;
+}
+
+.features {
+    background-color: #eeeeee;
+    color: white;
+    display: grid;
+    place-content: center;
+    text-align: center;
+}
+
+.feature-1 {
+    grid-area: feature-1;
+    background-size: cover;
+    color: #800280;
+}
+
+.feature-2 {
+    grid-area: feature-2;
+    background-image: url(../img/tekkom3.jpg);
+    background-size: cover;
+    color: white;
+}
+
+.features .perangkat {
+    font-size: 3em;
+    
+}
+
+/* Navigation */
+.menu {
+    order: -1;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+}
+
+.menu .brand {
+    font-size: 1.3em;
+    color: #333333;
+}
+
+.menu ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 5px;
+}
+
+.menu a {
+    display: block;
+    background-color: #aa0d74;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding: 5px;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+/* Hamburger Menu */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20px;
+    /* background-color: black */
+    position: relative;
+    z-index: 2;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background: #aa0d74;
+    border-radius: 3px;
+    transition: all 0.5s;
+}
+
+.menu-toggle input {
+    display: block;
+    position: absolute;
+    background-color: black;
+    width: 40px;
+    height: 28px;
+    left: -5px;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
+}
+
+/* Hamburger Menu Animation */
+.menu-toggle span:nth-child(2) {
+    transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4) {
+    transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2) {
+    background-color: white;
+    transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(4) {
+    background-color: white;
+    transform: rotate(-45deg) translate(-2px, 7px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(3) {
+    opacity: 0;
+    transform: scale(0);
+}
+
+
+
+.jumbotron{
+    padding-bottom:162px;
+    padding-right:20px;
+    padding-top:163px;
+}
+
+.footer{
+    background:#aa0d74;
+    color:#fff;
+    font-size:18px;
+    font-weight:normal;
+    height:50px;
+    line-height:50px;
+    margin-top:-30px;
+    width:100%;
+    text-align:center;
+}
