@@ -1,4 +1,3 @@
-
 <?php 
 include 'koneksi.php';
 ?>
@@ -28,7 +27,7 @@ include 'koneksi.php';
 </head>
 <h3>Pencarian Mahasiswa</h3>
  
-<form action="carimhs.php" method="get">
+<form action="cari.php" method="get">
 	<label>Cari :</label>
 	<input type="text" name="cari">
 	<input type="submit" value="Cari">
@@ -43,22 +42,29 @@ if(isset($_GET['cari'])){
  
 <table border="1">
 	<tr>
-		<th>No</th>
+		<th>NPM</th>
 		<th>Nama</th>
+		<th>Kelas</th>
+		<th>Semester</th>
+		<th>Prodi</th>
+		<th>Angkatan</th>
 	</tr>
 	<?php 
 	if(isset($_GET['cari'])){
 		$cari = $_GET['cari'];
-		$data = mysql_query("select * from mhs where nama like '%".$cari."%'");				
+		$data = mysqli_query($koneksi, "select * from tb_mhs where mhs_nama like '%".$cari."%'");				
 	}else{
-		$data = mysql_query("select * from mhs");		
+		$data = mysqli_query($koneksi, "select * from tb_mhs");		
 	}
-	$no = 1;
-	while($d = mysql_fetch_array($data)){
+	while($d = mysqli_fetch_array($data)){
 	?>
 	<tr>
-		<td><?php echo $no++; ?></td>
-		<td><?php echo $d['nama']; ?></td>
+		<td><?php echo $d['mhs_npm']; ?></td>
+		<td><?php echo $d['mhs_nama']; ?></td>
+		<td><?php echo $d['mhs_kelas']; ?></td>
+		<td><?php echo $d['mhs_smt']; ?></td>
+		<td><?php echo $d['mhs_prodi']; ?></td>
+		<td><?php echo $d['mhs_angkatan']; ?></td>
 	</tr>
 	<?php } ?>
 </table>

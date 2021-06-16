@@ -3,19 +3,20 @@
     padding: 0;
 }
 
+.jumbotron-responsive {
+    display:none;
+}
+
 body {
-    padding-top:60px;
-    padding-bottom: 49px;
+    padding:auto;
     background-color: #eeeeee;
     font-size: 18px;
     font-family: 'PT Sans', sans-serif;
-   ;
 }
 
 /* Container */
 .container-fluid {
-    display: grid;
-    gap: 10px;
+    padding:158px;
 }
 
 
@@ -23,10 +24,10 @@ body {
 .header {
     display: grid;
     grid-template-areas:
-        'hero hero feature-1'
+        'gambar1 gambar2 teks'
 }
 
-.hero {
+.gambar {
     grid-area: hero;
     min-height: 517px;
     background-image: url(../img/tekkom2.jpg);
@@ -51,13 +52,6 @@ body {
     grid-area: feature-1;
     background-size: cover;
     color: #800280;
-}
-
-.feature-2 {
-    grid-area: feature-2;
-    background-image: url(../img/tekkom3.jpg);
-    background-size: cover;
-    color: white;
 }
 
 .features .perangkat {
@@ -152,16 +146,8 @@ body {
     transform: scale(0);
 }
 
-
-
-.jumbotron{
-    padding-bottom:162px;
-    padding-right:20px;
-    padding-top:163px;
-}
-
 .footer{
-    background:#aa0d74;
+    background:#800280;
     color:#fff;
     font-size:18px;
     font-weight:normal;
@@ -170,4 +156,121 @@ body {
     margin-top:-30px;
     width:100%;
     text-align:center;
+}
+
+/* RESPONSIVE DISPLAY */
+@media screen and (max-width:341px){
+body {
+    padding-top:94px;
+    background-color:#eee;
+    font-size: 18px;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.container-fluid {
+    padding:15px;
+    padding-top:0;
+    padding-bottom:75px;
+}
+
+.navbar-brand {
+    display:none;
+}
+
+img {
+    padding-top:55px;
+    display:block;
+    text-align:center;
+    max-width: 100%;
+    height:auto;
+}
+
+
+.text-sidm {
+    font-size:20px;
+    padding-top:15px;
+}
+
+.text-tekkom {
+    font-size:30px;
+}
+
+.text-polsri {
+    font-size:20px;
+}
+
+.jumbotron {
+    display:none;
+}
+
+.jumbotron-responsive {
+    display:block;
+}
+}
+
+@media screen and (min-width:342px) and (max-width:575px){
+body {
+    padding-top:56px;
+    background-color: #eee;
+    font-size: 18px;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.container-fluid {
+    padding:15px;
+    padding-bottom:102px;
+}
+
+img {
+    padding-top:92px;
+}
+
+.navbar-brand {
+    display:none;
+}
+
+.responsive {
+  width: 100%;
+  height: auto;
+}
+
+.text-sidm {
+    font-size:20px;
+    padding-top:15px;
+}
+
+.text-tekkom {
+    font-size:30px;
+}
+
+.text-polsri {
+    font-size:20px;
+}
+
+.jumbotron {
+    display:none;
+}
+
+.jumbotron-responsive {
+    display:block;
+}
+}
+
+@media screen and (min-width:700px) and (max-width:1230px){
+body {
+    padding-top:56px;
+    background-color: #eee;
+    font-size: 18px;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.container-fluid {
+    padding:13px;
+}
+
+img {
+    display:block;
+    text-align:center;
+    max-width: 100%;
+}
 }
